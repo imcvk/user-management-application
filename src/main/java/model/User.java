@@ -1,8 +1,6 @@
 package model;
 
 import java.util.Date;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class User {
     private int userid;
@@ -101,6 +99,5 @@ public class User {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
 
 }
