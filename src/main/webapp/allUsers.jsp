@@ -52,6 +52,10 @@
         </td>
         <td><%=u.getGender()%>
         </td>
+        <td>
+          <a href="edit?id=<c:out value='${user.id}' />">Edit</a><label>|</label>
+          <a href="delete?id=<c:out value='${user.id}' />">Delete</a>
+        </td>
       </tr>
       <%}%>
       </tbody>

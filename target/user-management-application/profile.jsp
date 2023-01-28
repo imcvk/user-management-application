@@ -112,6 +112,7 @@
         document.getElementById("phoneNumber").disabled = false;
         document.getElementById("address").disabled = false;
         document.getElementById("saveBtn").disabled = false;
+        document.getElementById("deleteProfile").disabled = false;
     }
 
     function disableFields() {
@@ -121,7 +122,7 @@
         document.getElementById("gender").disabled = true;
         document.getElementById("phoneNumber").disabled = true;
         document.getElementById("address").disabled = true;
-        document.getElementById("saveBtn").disabled = true;
+        document.getElementById("deleteProfile").disabled = true;
     }
 </script>
 <%

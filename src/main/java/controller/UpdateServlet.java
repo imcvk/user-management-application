@@ -14,6 +14,7 @@ import java.util.Date;
 
 @WebServlet(name = "UpdateServlet", value = "/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         {
 
@@ -44,7 +45,8 @@ public class UpdateServlet extends HttpServlet {
 
             if (UserDAO.updateUser(u) == 1) {
                 request.setAttribute("currentUser", u);
-                request.setAttribute("updateMsg", "User updated successfully...");
+                request.setAttribute("updateMsg",
+                        "User updated successfully..Please logout and login again to check updated.");
                 dispatcher = request.getRequestDispatcher("profile.jsp");
                 dispatcher.forward(request, response);
             } else {

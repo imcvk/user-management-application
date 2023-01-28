@@ -15,7 +15,6 @@ public class AllUserServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         RequestDispatcher dispatcher = null;
         if (session != null) {
-
             dispatcher = request.getRequestDispatcher("allUsers.jsp");
             dispatcher.forward(request, response);
         } else {

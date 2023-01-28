@@ -36,6 +36,11 @@
       <a href="AllUserServlet">All existing users</a>
     </div>
   </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <a href="DeleteServlet">Delete My Profile</a>
+    </div>
+  </div>
 </center>
 </body>
 <%

@@ -11,7 +11,6 @@ public class UserDAO {
     public static String USER_INSERTER = "INSERT INTO User VALUES(?,?,?,?,?,?,?,?)";
 
     public static String USER_SELECTOR = "SELECT * FROM User u WHERE u.userid=?";
-    public static String DELETER = "DELETE FROM User u WHERE u.userid=?";
 
     public static int createUser(User u) throws SQLException {
         int r = 0;
@@ -62,7 +61,7 @@ public class UserDAO {
     public static String LOGIN_QUERY = "select * from User where userid=?";
 
     public static User validateUser(User user) {
-        User u = null;
+        User u = new User();
         Connection connection = DBConnection.getConnection();
         PreparedStatement statement = null;
         try {
@@ -121,5 +120,21 @@ public class UserDAO {
             throw new RuntimeException(e);
         }
         return users;
+    }
+
+    public static String DELETER = "DELETE FROM User u WHERE u.userid=?";
+
+    public static int deleteUser(int userid) {
+        int r = 0;
+        Connection connection = DBConnection.getConnection();
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(DELETER);
+            statement.setInt(1, userid);
+            r = statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return r;
     }
 }
