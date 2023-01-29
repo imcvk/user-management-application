@@ -9,5 +9,9 @@
     <label style="color: aliceblue">|</label>
     <a href="LogoutServlet">Logout</a>
   </h2>
-  <%}%>
+  <%
+    } else {
+      response.sendRedirect("index.jsp");
+    }
+  %>
 </nav>

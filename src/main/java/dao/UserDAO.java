@@ -66,7 +66,7 @@ public class UserDAO {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(LOGIN_QUERY);
-            statement.setString(1, user.getEmailAddress());
+            statement.setInt(1, user.getUserid());
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 u = new User();

@@ -26,9 +26,8 @@ public class DeleteServlet extends HttpServlet {
         int i = UserDAO.deleteUser(u.getUserid());
         RequestDispatcher dispatcher = null;
         if (i == 1) {
-            session.invalidate();
             response.sendRedirect("index.jsp");
-            session.setAttribute("errorMsg", "User deleted.");
+            session.setAttribute("deleteMsg", "User deleted.");
         } else {
             request.setAttribute("errorMsg", "Delete profile failed...Please try after sometime.");
             dispatcher = request.getRequestDispatcher("profile.jsp");
